@@ -4,13 +4,11 @@
 //! aware information like the connections HTTP version and the remote address.
 
 extern crate http;
-extern crate tokio_io;
 #[cfg(feature = "tcp")]
 extern crate tokio_tcp;
 
 use http::Version;
 use std::net::SocketAddr;
-use tokio_io::{AsyncRead, AsyncWrite};
 
 #[cfg(feature = "tcp")]
 mod tcp;
@@ -20,7 +18,7 @@ mod tcp;
 /// This connection is a `AsyncRead + AsyncWrite` stream that provides information
 /// on what http versions were determinted `ALPN` negotiation or what the remote address
 /// this stream is connected too.
-pub trait HttpConnection: AsyncRead + AsyncWrite {
+pub trait HttpConnection {
     /// Returns the version that this stream is set too.
     ///
     /// For `version` this indicates that this stream is accepting http frames of the version

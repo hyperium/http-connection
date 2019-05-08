@@ -12,3 +12,13 @@ impl HttpConnection for TcpStream {
         self.peer_addr().ok()
     }
 }
+
+impl HttpConnection for ::std::net::TcpStream {
+    fn version(&self) -> Option<Version> {
+        None
+    }
+
+    fn remote_addr(&self) -> Option<SocketAddr> {
+        self.peer_addr().ok()
+    }
+}

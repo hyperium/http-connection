@@ -5,7 +5,6 @@ authors = ["Lucio Franco <luciofranco14@gmail.com>"]
 
 [dependencies]
 http = "0.1"
-tokio-io = "0.1"
 tokio-tcp = { version = "0.1", optional = true }
 
 [features]
