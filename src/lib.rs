@@ -4,11 +4,16 @@
 //! aware information like the connections HTTP version and the remote address.
 
 extern crate http;
+#[cfg(feature = "rustls")]
+extern crate tokio_rustls;
 #[cfg(feature = "tcp")]
 extern crate tokio_tcp;
 
 use http::Version;
 use std::net::SocketAddr;
+
+#[cfg(feature = "rustls")]
+mod rustls;
 
 #[cfg(feature = "tcp")]
 mod tcp;
