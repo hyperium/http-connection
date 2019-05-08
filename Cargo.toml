@@ -1,0 +1,13 @@
+[package]
+name = "http-connection"
+version = "0.1.0"
+authors = ["Lucio Franco <luciofranco14@gmail.com>"]
+
+[dependencies]
+http = "0.1"
+tokio-io = "0.1"
+tokio-tcp = { version = "0.1", optional = true }
+
+[features]
+default = ["tcp"]
+tcp = ["tokio-tcp"]
