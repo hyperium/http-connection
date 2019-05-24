@@ -4,8 +4,8 @@ A trait representing asynchronous HTTP connection.
 
 [![Build Status][azure-badge]][azure-url]
 
-[azure-badge]: https://dev.azure.com/seanmonstar/http-connection/_apis/build/status/hyperium.http-connection?branchName=master
-[azure-url]: https://dev.azure.com/seanmonstar/http-connection/_build/latest?definitionId=1&branchName=master
+[azure-badge]: https://dev.azure.com/hyperium/http-connection/_apis/build/status/hyperium.http-connection?branchName=master
+[azure-url]: https://dev.azure.com/hyperium/http-connection/_build/latest?definitionId=1&branchName=master
 
 More information about this crate can be found in the [crate
 documentation][dox].
