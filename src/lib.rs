@@ -1,3 +1,7 @@
+#![doc(html_root_url = "https://docs.rs/http-connection/0.1.0")]
+#![deny(missing_debug_implementations, missing_docs, unreachable_pub)]
+#![cfg_attr(test, deny(warnings))]
+
 //! Asynchronous HTTP connection
 //!
 //! This trait decorates an `AsyncRead + AsyncWrite` connection stream/sink with HTTP
