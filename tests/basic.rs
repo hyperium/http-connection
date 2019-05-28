@@ -7,8 +7,7 @@ use std::net::SocketAddr;
 
 pub struct NoValues;
 
-impl HttpConnection for NoValues {
-}
+impl HttpConnection for NoValues {}
 
 pub struct WithVersion;
 
@@ -25,7 +24,6 @@ impl HttpConnection for WithRemoteAddr {
         Some("127.0.0.1:3000".parse().unwrap())
     }
 }
-
 
 #[test]
 fn no_values() {
