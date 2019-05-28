@@ -28,8 +28,12 @@ pub trait HttpConnection {
     /// For `version` this indicates that this stream is accepting http frames of the version
     /// returned. If `None` is returned then there has been no prior negotiation for the http
     /// version.
-    fn version(&self) -> Option<Version>;
+    fn version(&self) -> Option<Version> {
+        None
+    }
 
     /// Returns the remote address that this connection is connected to.
-    fn remote_addr(&self) -> Option<SocketAddr>;
+    fn remote_addr(&self) -> Option<SocketAddr> {
+        None
+    }
 }
