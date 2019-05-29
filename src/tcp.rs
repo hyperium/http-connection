@@ -4,7 +4,7 @@ use tokio_tcp::TcpStream;
 use HttpConnection;
 
 impl HttpConnection for TcpStream {
-    fn version(&self) -> Option<Version> {
+    fn negotiated_version(&self) -> Option<Version> {
         None
     }
 
@@ -14,7 +14,7 @@ impl HttpConnection for TcpStream {
 }
 
 impl HttpConnection for ::std::net::TcpStream {
-    fn version(&self) -> Option<Version> {
+    fn negotiated_version(&self) -> Option<Version> {
         None
     }
 

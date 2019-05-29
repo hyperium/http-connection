@@ -12,7 +12,7 @@ impl HttpConnection for NoValues {}
 pub struct WithVersion;
 
 impl HttpConnection for WithVersion {
-    fn version(&self) -> Option<Version> {
+    fn negotiated_version(&self) -> Option<Version> {
         Some(Version::HTTP_11)
     }
 }
@@ -29,7 +29,7 @@ impl HttpConnection for WithRemoteAddr {
 fn no_values() {
     let conn = NoValues;
 
-    assert!(conn.version().is_none());
+    assert!(conn.negotiated_version().is_none());
     assert!(conn.remote_addr().is_none());
 }
 
@@ -37,7 +37,7 @@ fn no_values() {
 fn version() {
     let conn = WithVersion;
 
-    assert_eq!(Some(Version::HTTP_11), conn.version());
+    assert_eq!(Some(Version::HTTP_11), conn.negotiated_version());
     assert!(conn.remote_addr().is_none());
 }
 
@@ -47,5 +47,5 @@ fn remote_addr() {
     let addr = "127.0.0.1:3000".parse().unwrap();
 
     assert_eq!(Some(addr), conn.remote_addr());
-    assert!(conn.version().is_none());
+    assert!(conn.negotiated_version().is_none());
 }
