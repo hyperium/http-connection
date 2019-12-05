@@ -1,6 +1,6 @@
 use http::Version;
 use std::net::SocketAddr;
-use tokio_tcp::TcpStream;
+use tokio::net::TcpStream;
 use HttpConnection;
 
 impl HttpConnection for TcpStream {

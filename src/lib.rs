@@ -9,7 +9,7 @@
 
 extern crate http;
 #[cfg(feature = "tcp")]
-extern crate tokio_tcp;
+extern crate tokio;
 
 use http::Version;
 use std::net::SocketAddr;
